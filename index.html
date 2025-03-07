@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <title>Journal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="height: 100%; width: 100%;">
+        <form action="/create_journal_entry" method="POST" style="width: 100%; height: 100%;">
+            <label for="journal_entry_name">Entry Name:</label>
+            <input id="journal_entry_name"
+                name="name"
+                type="text"
+                placeholder="My Journal Entry"
+                required />
+            <br/>
+
+            <label for="content">Content:</label>
+            <br/>
+            <textarea name="content"
+                contenteditable="true"
+                placeholder="Enter your journal text here."
+                required
+                style="width: 90%; height: 80%;"></textarea>
+            <br/>
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
