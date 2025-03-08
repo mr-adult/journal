@@ -41,6 +41,8 @@ Deno.serve(async (req) => {
           nameValue,
           contentValue
         );
+      body = index;
+      contentType = "text/html";
       break;
     }
 
