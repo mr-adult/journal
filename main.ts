@@ -20,7 +20,6 @@ Deno.serve(async (req) => {
   const url = URL.parse(req.url);
   let body;
   let contentType;
-  console.log(url?.pathname);
   switch (url?.pathname) {
     case "/create_journal_entry": {
       const formData = await req.formData();
@@ -33,7 +32,7 @@ Deno.serve(async (req) => {
       const contentValue = content.valueOf();
       if (typeof contentValue !== "string") {  return new Response(null, { status: 400, statusText: "Invalid Journal entry content", })  }
       
-      await db.prepare(`
+      db.prepare(`
           INSERT INTO journal_entries (date, name, content)
           VALUES (?, ?, ?);
         `)
